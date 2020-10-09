@@ -6,8 +6,60 @@
   <link href="stylesheets/index.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-  <div class="container">
     <!-- write your html -->
+    <div class="l-container">
+      <div class="l-main">
+        <header class="header">
+          <h1>TIC TAC TOE</h1>
+        </header>
+
+        <div class="display">
+          <div class="turn">
+            <div class="turn-item circle">○</div>
+            <div class="turn-item cross">×</div>
+          </div>
+          <div class="state">
+            <span class="state-message"></span>
+          </div>
+        </div>
+        <div class="l-board">
+            <table class="table" js-table="">
+              <tbody>
+                <tr class="row">
+                  <td class="cell js-cell" id="0"></td>
+                  <td class="cell js-cell" id="1"></td>
+                  <td class="cell js-cell" id="2"></td>
+                </tr>
+
+                <tr class="row">
+                  <td class="cell js-cell" id="3"></td>
+                  <td class="cell js-cell" id="4"></td>
+                  <td class="cell js-cell" id="5"></td>
+                </tr>
+
+                <tr class="row">
+                  <td class="cell js-cell" id="6"></td>
+                  <td class="cell js-cell" id="7"></td>
+                  <td class="cell js-cell" id="8"></td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div><div class="l-footer footer">
+
+            <div class="state-message js-state-message">starting...</div>
+            <div>
+              <a class="button js-restart ">RESTART</a>
+            </div>
+
+          </div>
+        </div>
+        
+          
+          
+        </div>
+  
   </div>
   <script type="text/javascript" src="js/function.js"></script>
 </body>
