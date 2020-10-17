@@ -1,4 +1,17 @@
-//ここにJSを入れていく
+const a0 =document.getElementById("0").innerText;
+const a1 =document.getElementById("1").innerText;
+const a2 =document.getElementById("2").innerText;
+const a3 =document.getElementById("3").innerText;
+const a4 =document.getElementById("4").innerText;
+const a5 =document.getElementById("5").innerText;
+const a6 =document.getElementById("6").innerText;
+const a7 =document.getElementById("7").innerText;
+const a8 =document.getElementById("8").innerText;
+
+const stateMessage = document.querySelector('.js-state-message')
+let winner = null;
+
+
 
 //○×交代の関数→各マスが何個埋まっているかで○×を決めようとしている
 function countTurn(){
@@ -12,171 +25,83 @@ function countTurn(){
 }
 
 
-//各マスのid取得
-const table0 = document.getElementById(0)
-const table1 = document.getElementById(1)
-const table2 = document.getElementById(2)
-const table3 = document.getElementById(3)
-const table4 = document.getElementById(4)
-const table5 = document.getElementById(5)
-const table6 = document.getElementById(6)
-const table7 = document.getElementById(7)
-const table8 = document.getElementById(8)
 
+//文言を変更する関数
 
-//各マスのイベント指定
-table0.addEventListener('click', function(){
-    if(document.getElementById(0).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table0.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table0.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table0.innerHTML ="×";
+function winnerJudge(){
+    if(a0 === a1 && a1 === a2　&& a0 === a2 && a0 !="" && a1 !="" && a2 !=""){
+        winner = a0;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table1.addEventListener('click', function(){
-    if(document.getElementById(1).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table1.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table1.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table1.innerHTML ="×";
+    if(a3 === a4 && a4 === a5 && a3 ===a5 && a3 !="" && a4 !="" && a5 !=""){
+        winner = a3;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table2.addEventListener('click', function(){
-    if(document.getElementById(2).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table2.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table2.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table2.innerHTML ="×";
+    if(a6 === a7 && a7 === a8 && a6 === a8 && a6 !="" && a7 !="" && a8 !=""){
+        winner = a6;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table3.addEventListener('click', function(){
-    if(document.getElementById(3).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table3.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table3.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table3.innerHTML ="×";
+    if(a0 === a3 && a3 === a6 && a0 ===a6 && a0 !="" && a3 !="" && a6 !=""){
+        winner = a0;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table4.addEventListener('click', function(){
-    if(document.getElementById(4).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table4.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table4.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table4.innerHTML ="×";
+    if(a1 === a4 && a4 === a7 && a1 ===a7 && a1 !="" && a4 !="" && a7 !=""){
+        winner = a1;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table5.addEventListener('click', function(){
-    if(document.getElementById(5).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table5.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table5.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table5.innerHTML ="×";
+    if(a2 === a5 && a5 === a8 && a2 === a8 && a2 !="" && a5 !="" && a8 !=""){
+        winner = a2;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table6.addEventListener('click', function(){
-    if(document.getElementById(6).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table6.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table6.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table6.innerHTML ="×";
+    if(a0 === a4 && a4 === a8 && a0 === a8 && a0 !="" && a4 !="" && a8 !=""){
+        winner = a0;
+        stateMessage.innerText=winner+" win!"
     }
-}, false);
-
-table7.addEventListener('click', function(){
-    if(document.getElementById(7).innerHTML !==""){
-        return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table7.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table7.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table7.innerHTML ="×";
+    if(a2 === a4 && a4 === a6 && a2 ===a6 && a2 !="" && a4 !="" && a6 !=""){
+        winner = a2;
+        stateMessage.innerText=winner+" win!"
+    }else if(countTurn() === 9){
+        stateMessage.innerText="draw"
     }
-}, false);
+}
 
-table8.addEventListener('click', function(){
-    if(document.getElementById(8).innerHTML !==""){
+
+
+//各マスクリック時の挙動
+const cells = document.querySelectorAll('.js-cell')
+cells.forEach(item => {
+  item.addEventListener('click', () => {
+    changeUnderLine()
+    winnerJudge()
+    if(item.innerHTML !==""){
         return;
-    }//→要素が入ってる場合、更新させない機構
-    if(countTurn() == 0){
-        table8.innerHTML ="○";
-    }else if(countTurn()%2 == 0){
-        table8.innerHTML ="○";
-    }else if(countTurn()%2 !== 0){
-        table8.innerHTML ="×";
     }
-}, false);
-//・・・各マス指定ここまで
+    if(countTurn() % 2 === 0){
+        item.innerHTML="○";
+    }else if(countTurn()%2 !== 0){
+        item.innerHTML="×";
+    }
+  })
+})
+
 
 
 //ターン交代の下線入れ替え関数
 function changeUnderLine(){
+    const circleLine = document.querySelector('.circle')
+    const crossLine = document.querySelector('.cross')
+
     if(countTurn() % 2== 0){
-        const circleLine = document.querySelector('.circle')
-        circleLine.classList.remove('.cross');
-        circleLine.classList.add('.circle');
+        circleLine.classList.remove('active');
+        crossLine.classList.add('active');
     }else if(countTurn() % 2 !== 0){
-        const crossLine = document.querySelector('.cross')
-            crossLine.classList.remove('.circle');
-            crossLine.classList.add('.cross');
-};
-}
-changeUnderLine();
-//・・・ここまで
+        crossLine.classList.remove('active');
+        circleLine.classList.add('active');
+    };
+  }
 
 
-
-//勝敗判定
-//(js-state-messageが、「○win!」,「×win!」,「draw」の 種類に変化
-// →決着後は、追加で押せないようにする)
-//決着時挙動(js-state-messageが、「○win!」,「×win!」,「draw」の 種類に変化)
-
-  //○が勝利パターン
-
-
-  //×が勝利パターン
-
-
-  //drawパターン
-
-
-
-//RESTARTボタンで、スタート画面に戻る
+//リセットする関数
 function reset() {
     document.querySelector('.js-restart').addEventListener('click',function(){
         location.reload();

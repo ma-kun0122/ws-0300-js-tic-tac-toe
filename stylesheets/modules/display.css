@@ -1,1 +1,1 @@
-.display{padding:8px 16px}.turn{display:flex;text-align:center}.turn-item{padding:8px;font-size:1.5rem;width:100%}.circle{border-bottom:4px solid black}.cross{border-bottom:none}
+.display{padding:8px 16px}.turn{display:flex;text-align:center}.turn-item{padding:8px;font-size:1.5rem;width:100%}.active{border-bottom:4px solid black}
